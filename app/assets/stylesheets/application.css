@@ -1,6 +1,9 @@
 h1{
-	color:red;
-}/*
+    color: red;
+   text-align:center;
+   transition: all 1s 0s ease;
+   }
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -15,8 +18,20 @@ h1{
  *= require_tree .
  *= require_self
  */
+body {background: #efefef}
 img {
-    border-radius: 50%;
+	border-radius: 30%;
     width:  180px;
     height: 180px;
+    margin: auto;
+    transform: translate(285%,0%);
+    transition: all 1s 0s ease;
+}
+img:hover{
+     width: 180px;
+     height: 230px;
+}
+h2{
+	color: red;
+     text-align: center;
 }
