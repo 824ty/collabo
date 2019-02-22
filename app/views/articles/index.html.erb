@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <ul class="nav nav-tabs">
+          <li role="presentation" class="active"><a href="#">takesimadialy</a></li>
+          <li role="presentation"><a href="#">メニューＡ</a></li>
+          <li role="presentation"><a href="#">メニューＢ</a></li>
+          <li role="presentation"><a href="#">メニューC</a></li>
+    </ul>
+
+      <div class="col-md-4">
+
+          <h1>新規投稿</h1>
+          <%= form_for(@article) do |f| %>
+
+          <h4>タイトル</h4>
+          <%= f.text_field :title %>
+
+          <h4>天気</h4>
+          <%= f.text_field :weather %>
+
+          <h4>本文</h4>
+          <%= f.text_area :body %>
+
+          <h4>投稿した時間</h4>
+          <%= f.text_area :time %>
+
+          <%= f.submit '投稿' %>
+
+           <% end %>
+
+       </div>
+
+
+      <div class="col-md-8">
+
+          <h1>投稿一覧</h1>
+        
+        <table width="100%">
+
+            <tr>
+                      <th>タイトル</th>
+
+                      <th>天気</th>
+
+                      <th>本文</th>
+
+                      <th>投稿した時間</th>
+               
+            </tr>
+
+            <% @articles.each do |article| %>
+
+                  <tr>
+                   <td>
+                    <p>
+                    	<%=link_to article.title, "/articles/#{article.id}" %>
+                    </p>
+                   </td>
+
+                   <td>
+                    <p>
+                    	<%= article.weather %>
+                    </p>
+                   </td>
+
+
+                   <td>
+                    <p>
+                    	<%=link_to article.body, "/articles/#{article.id}" %>
+                    </p>
+                   </td>
+
+                   <td>
+                    <p>
+                    	<%=link_to article.time, "/articles/#{article.id}" %>
+                    </p>
+                   </td>
+                  </tr>
+
+              <% end %>
+         </table>
+
+      </div>
+  </div>
+</div>
+
+
